@@ -31,12 +31,10 @@ namespace Inversions
             {
                 int divideAt = length / 2;
                 List<int> left = subList.GetRange(0, divideAt);
-                List<int> right = subList.GetRange(divideAt, length-divideAt);
+                List<int> right = subList.GetRange(divideAt, length - divideAt);
                 PartialResult partialLeft = SortAndCount(left);
                 PartialResult partialRight = SortAndCount(right);
-                PartialResult result = new PartialResult();
-                result.sortedList = new List<int>();
-                result.inversions = partialLeft.inversions + partialRight.inversions;
+                PartialResult result = new PartialResult() { sortedList = new List<int>(), inversions = partialLeft.inversions + partialRight.inversions };
                 int i = 0;
                 int j = 0;
                 for (int k=0; k<length; k+=1)
