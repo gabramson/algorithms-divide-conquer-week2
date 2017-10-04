@@ -12,7 +12,9 @@ namespace InversionsTest
             NumberList numberList = new NumberList();
             numberList.Add(2);
             numberList.Add(1);
-            Assert.AreEqual(1, numberList.Inversions());
+            numberList.Add(3);
+            numberList.Add(2);
+            Assert.AreEqual(2, numberList.Inversions());
         }
     }
 }
